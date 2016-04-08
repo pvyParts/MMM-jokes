@@ -11,7 +11,7 @@ modules: [
 		position: 'lower_third',	// This can be any of the regions.
 						// Best results in one of the middle regions like: lower_third
 		config: {
-		    url: 'http://api.icndb.com/jokes/random' //ATM can only use this as the json parse is hard coded
+		    api: 'icndb'
 		}
 	}
 ]
@@ -31,6 +31,14 @@ The following properties can be configured:
 		</tr>
 	<thead>
 	<tbody>
+
+	  <tr>
+		  <td><code>api</code></td>
+		  <td>What API are we going to use?<br>
+		 	  <br><b>Possible values:</b> <code>ticndb</code>, <code>tambal</code>
+		 	  <br><b>Default value:</b> <code>ticndb</code> (30 seconds)
+		  </td>
+	  </tr>
 
 		<tr>
 			<td><code>updateInterval</code></td>
