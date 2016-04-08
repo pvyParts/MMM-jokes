@@ -36,7 +36,7 @@ The following properties can be configured:
 		  <td><code>api</code></td>
 		  <td>What API are we going to use?<br>
 		 	  <br><b>Possible values:</b> <code>ticndb</code>, <code>tambal</code>
-		 	  <br><b>Default value:</b> <code>ticndb</code> (30 seconds)
+		 	  <br><b>Default value:</b> <code>ticndb</code>
 		  </td>
 	  </tr>
 
