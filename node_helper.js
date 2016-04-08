@@ -10,7 +10,10 @@ var moment = require('moment');
 var request = require('request');
 var validUrl = require('valid-url');
 
-var JokeFetcher = function(url, reloadInterval) {
+var validAPIs = ["ticndb", "tambal"];
+var apiUrls = ["http://api.icndb.com/jokes/random", "http://tambal.azurewebsites.net/joke/random"];
+
+var JokeFetcher = function(url, api, reloadInterval) {
     var self = this;
 
     var reloadTimer = null;
@@ -23,19 +26,32 @@ var JokeFetcher = function(url, reloadInterval) {
      * Initiates joke fetch.
      */
     var fetchJoke = function() {
-            
+
         clearTimeout(reloadTimer);
         reloadTimer = null;
-        
-        console.log('Getting data: ' + url);
+
+        //console.log('Getting data: ' + url);
 
         request.get(url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                console.log('Getting data: '+ body);
-                var data = JSON.parse(body); 
-                joke = data.value.joke; //TODO custom fields
+                //console.log('Getting data: '+ body);
+                var data = JSON.parse(body);
+                //console.log(data);
+                //console.log(api);
+                switch (api){
+                    case "ticndb":
+                        joke = data.value.joke; //TODO custom fields
+                        break;
+                    case "tambal":
+                        joke = data.joke;
+                        break;
+                    case "webknox":
+                        joke = data.joke;
+                        break;
+                }
+                //console.log('got data: '+ joke);
                 self.broadcastEvents();
-                scheduleTimer();    
+                scheduleTimer();
             } else {
                 console.error(self.name + ": Could not load Jokes.");
             }
@@ -103,6 +119,15 @@ var JokeFetcher = function(url, reloadInterval) {
         return url;
     };
 
+    /* api()
+     * Returns the api of this fetcher.
+     *
+     * return string - The api of this fetcher.
+     */
+    this.api = function() {
+        return api;
+    };
+
     /* events()
      * Returns current available events for this fetcher.
      *
@@ -119,7 +144,6 @@ module.exports = NodeHelper.create({
     start: function() {
         var self = this;
         var joke = '';
-
         this.fetchers = [];
 
         console.log('Starting node helper for: ' + this.name);
@@ -129,7 +153,17 @@ module.exports = NodeHelper.create({
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'ADD_JOKE') {
             //console.log('ADD_JOKE: ');
-            this.createFetcher(payload.url, payload.fetchInterval);
+            var apiUrl = apiUrls[0];
+            var currentAPI = validAPIs[0];
+            for (index = 0; index < validAPIs.length; ++index) {
+                if (validAPIs[index] === payload.api){
+                    console.log(validAPIs[index]);
+                    apiUrl = apiUrls[index];
+                    currentAPI = validAPIs[index];
+                }
+            }
+
+            this.createFetcher(apiUrl, currentAPI, payload.fetchInterval);
         }
     },
 
@@ -141,7 +175,7 @@ module.exports = NodeHelper.create({
      * attribute reloadInterval number - Reload interval in milliseconds.
      */
 
-    createFetcher: function(url, fetchInterval) {
+    createFetcher: function(url, api, fetchInterval) {
         var self = this;
         console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
         if (!validUrl.isUri(url)){
@@ -153,7 +187,7 @@ module.exports = NodeHelper.create({
         console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
         if (typeof self.fetchers[url] === 'undefined') {
             console.log('Create new joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
-            fetcher = new JokeFetcher(url, fetchInterval);
+            fetcher = new JokeFetcher(url, api, fetchInterval);
 
             fetcher.onReceive(function(fetcher) {
                 //console.log('Broadcast events.');
