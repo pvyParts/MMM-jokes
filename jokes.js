@@ -7,7 +7,7 @@
  * MIT Licensed.
  */
 
-Module.register('jokes',{
+Module.register('MM-module_jokes',{
 
     // Module config defaults.
     defaults: {
