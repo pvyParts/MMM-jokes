@@ -4,7 +4,7 @@
   "description": "Random Jokes module for the Magic Mirror.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pvyParts/MM-module_jokes"
+    "url": "git+https://github.com/pvyParts/MMM-jokes"
   },
   "keywords": [
     "magic mirror",
@@ -13,12 +13,12 @@
     "module"
   ],
   "author": "Aaron Kable",
-  "contributors": "https://github.com/pvyParts/MM-module_jokes/graphs/contributors",
+  "contributors": "https://github.com/pvyParts/MMM-jokes/graphs/contributors",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pvyParts/MM-module_jokes/issues"
+    "url": "https://github.com/pvyParts/MMM-jokes/issues"
   },
-  "homepage": "https://github.com/pvyParts/MM-module_jokes#readme",
+  "homepage": "https://github.com/pvyParts/MMM-jokes#readme",
   "dependencies": {
     "request": "latest",
     "valid-url": "latest"
