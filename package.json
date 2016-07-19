@@ -1,0 +1,26 @@
+{
+  "name": "Magic-Mirror-Module-Jokes",
+  "version": "1.0.0",
+  "description": "Random Jokes module for the Magic Mirror.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvyParts/MM-module_jokes"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "traffic",
+    "module"
+  ],
+  "author": "Aaron Kable",
+  "contributors": "https://github.com/pvyParts/MM-module_jokes/graphs/contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SamLewis0602/MMM-Traffic/issues"
+  },
+  "homepage": "https://github.com/pvyParts/MM-module_jokes#readme",
+  "dependencies": {
+    "request": "latest",
+    "valid-url": "latest"
+    }
+}
