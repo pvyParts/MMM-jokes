@@ -184,7 +184,7 @@ module.exports = NodeHelper.create({
         }
 
         var fetcher;
-        console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
+        //console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
         if (typeof self.fetchers[url] === 'undefined') {
             console.log('Create new joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
             fetcher = new JokeFetcher(url, api, fetchInterval);
