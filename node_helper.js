@@ -177,7 +177,7 @@ module.exports = NodeHelper.create({
 
     createFetcher: function(url, api, fetchInterval) {
         var self = this;
-        console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
+        //console.log('processing joke fetcher for url: ' + url + ' - Interval: ' + fetchInterval);
         if (!validUrl.isUri(url)){
             self.sendSocketNotification('INCORRECT_URL', {url:url});
             return;
