@@ -157,7 +157,7 @@ module.exports = NodeHelper.create({
             var currentAPI = validAPIs[0];
             for (index = 0; index < validAPIs.length; ++index) {
                 if (validAPIs[index] === payload.api){
-                    console.log(validAPIs[index]);
+                    //console.log(validAPIs[index]);
                     apiUrl = apiUrls[index];
                     currentAPI = validAPIs[index];
                 }
