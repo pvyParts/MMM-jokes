@@ -34,7 +34,7 @@ var JokeFetcher = function(url, api, reloadInterval) {
 
         request.get(url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                //console.log('Getting data: '+ body);
+                console.log('Jokes_Helper: '+ body);
                 var data = JSON.parse(body);
                 //console.log(data);
                 //console.log(api);
@@ -53,7 +53,7 @@ var JokeFetcher = function(url, api, reloadInterval) {
                 self.broadcastEvents();
                 scheduleTimer();
             } else {
-                console.error(self.name + ": Could not load Jokes.");
+                console.error("Jokes_Helper: Could not load Jokes.");
             }
         });
 
