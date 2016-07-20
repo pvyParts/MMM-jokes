@@ -54,7 +54,7 @@ var JokeFetcher = function(url, api, reloadInterval) {
                 scheduleTimer();
             } else {
                 console.error("Jokes_Helper: Could not load Jokes.");
-                console.error("Jokes_Helper: "  + error);
+                console.error("Jokes_Helper: "  + response.statusCode);
             }
         });
 
