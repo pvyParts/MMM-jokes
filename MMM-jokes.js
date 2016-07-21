@@ -1,7 +1,8 @@
 /* Magic Mirror
  * Module: jokes
  *
- * Random Jokes from http://TICNDB.com
+ * Random Jokes from http://TICNDB.com or http://tambal.azurewebsites.net/
+ * based on the compliments default module
  *
  * By Aaron Kable
  * MIT Licensed.
@@ -13,9 +14,9 @@ Module.register('MMM-jokes',{
     defaults: {
         api: 'ticndb',
         fadeSpeed: 4000,
-        initialLoadDelay: 2500, // 2.5 seconds delay. This delay is used to keep the OpenWeather API happy.
+        initialLoadDelay: 2500, // 2.5 seconds delay on load
         retryDelay: 2500,
-        updateInterval: 60 * 1000, // every 10 minutes
+        updateInterval: 10 * 60 * 1000, // every 10 minutes
     },
 
     // Define required scripts.
