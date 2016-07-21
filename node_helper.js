@@ -6,7 +6,6 @@
  */
 
 var NodeHelper = require('node_helper');
-var moment = require('moment');
 var request = require('request');
 var validUrl = require('valid-url');
 
