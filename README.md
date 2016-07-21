@@ -35,7 +35,7 @@ The following properties can be configured:
 	  <tr>
 		  <td><code>api</code></td>
 		  <td>What API are we going to use?<br>
-		 	  <br><b>Possible values:</b> <code>ticndb - http://www.icndb.com/</code>, <code>tambal - http://tambal.azurewebsites.net/</code>
+		 	  <br><b>Possible values:</b> [ticndb](http://www.icndb.com/), [tambal](http://tambal.azurewebsites.net/)
 		 	  <br><b>Default value:</b> <code>ticndb</code>
 		  </td>
 	  </tr>
