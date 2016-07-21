@@ -1,5 +1,5 @@
-# Module: Jokes
-The `jokes` module is similar to the complements module but it loads its data from a web API for random jokes
+# Module: MMM-jokes
+The `MMM-jokes` module is similar to the complements module but it loads its data from a web API for random jokes
 
 ## Using the module
 
@@ -7,7 +7,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		module: 'jokes',
+		module: 'MMM-jokes',
 		position: 'lower_third',	// This can be any of the regions.
 						// Best results in one of the middle regions like: lower_third
 		config: {
