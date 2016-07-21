@@ -11,7 +11,7 @@ modules: [
 		position: 'lower_third',	// This can be any of the regions.
 						// Best results in one of the middle regions like: lower_third
 		config: {
-		    api: 'icndb'
+		    api: 'icndb' //required
 		}
 	}
 ]
@@ -35,16 +35,16 @@ The following properties can be configured:
 	  <tr>
 		  <td><code>api</code></td>
 		  <td>What API are we going to use?<br>
-		 	  <br><b>Possible values:</b> <code>ticndb</code>, <code>tambal</code>
+		 	  <br><b>Possible values:</b> <code>ticndb - http://www.icndb.com/</code>, <code>tambal - http://tambal.azurewebsites.net/</code>
 		 	  <br><b>Default value:</b> <code>ticndb</code>
 		  </td>
 	  </tr>
 
 		<tr>
 			<td><code>updateInterval</code></td>
-			<td>How often does the compliment have to change? (Milliseconds)<br>
+			<td>How often does the joke have to change? (Milliseconds)<br>
 				<br><b>Possible values:</b> <code>1000</code> - <code>86400000</code>
-				<br><b>Default value:</b> <code>30000</code> (30 seconds)
+				<br><b>Default value:</b> <code>600000</code> (10 minutes)
 			</td>
 		</tr>
 		<tr>
